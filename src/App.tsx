@@ -1,16 +1,13 @@
+import "./App.css";
 
-import './App.css'
-
-import RouteManager from './routes/RouteManager'
+import RouteManager from "./routes/RouteManager";
 
 function App() {
-  
-   return <div className="App">
-
-  <RouteManager />
-   </div>
-      
-
+  return (
+    <div>
+      <RouteManager />
+    </div>
+  );
 }
 
-export default App
+export default App;
