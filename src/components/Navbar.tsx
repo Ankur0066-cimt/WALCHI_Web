@@ -59,16 +59,17 @@ const Navbar: React.FC = () => {
             </span>
           </div>
           <FaMapMarkerAlt className="text-gray-700 text-lg cursor-pointer hover:text-green-500 transition-all duration-300" />
-          <FaUser
+          <FiSettings
             className="text-gray-700 text-lg cursor-pointer hover:text-green-500 transition-all duration-300"
             onClick={() => navigate("/login")}
           />
-          <FiSettings className="text-gray-700 text-lg cursor-pointer hover:text-green-500 transition-all duration-300"
+          
+          <FaUser className="text-gray-700 text-lg cursor-pointer hover:text-green-500 transition-all duration-300"
           onClick={() => navigate("/myprofile")}
           />
 
           <button
-            className="bg-[#FBBF24] hover:bg-yellow-500 px-5 py-2 rounded-full font-semibold"
+            className="bg-[#FBBF24] hover:bg-yellow-500 px-5 py-2 rounded-full font-semibold text-white"
             onClick={() => navigate("/consultation")}
           >
             Book Free Site Visit

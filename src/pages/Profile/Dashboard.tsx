@@ -42,7 +42,7 @@ const Dashboard = () => {
             Profile
           </button>
 
-          <button
+          {/* <button
             onClick={() => setSelectedTab("trackOrder")}
             className={`w-full py-2 px-3 rounded transition ${
               selectedTab === "trackOrder"
@@ -51,7 +51,18 @@ const Dashboard = () => {
             }`}
           >
             Track Order Details
-          </button>
+          </button> */}
+
+          <button 
+          onClick={() => navigate("/roomdetail")}
+          className={`w-full py-2 px-3 rounded transition ${
+              selectedTab === "trackOrder"
+                ? "bg-white text-green-700 font-semibold"
+                : "text-white hover:bg-green-800"
+            }`}
+          >
+            View Order Details
+            </button>
         </nav>
       </aside>
 
@@ -175,13 +186,14 @@ const Dashboard = () => {
         {/* Track Order */}
         {selectedTab === "trackOrder" && (
           <div className="bg-white rounded-lg shadow-lg p-8">
-            <h3 className="text-xl font-semibold mb-4">Track Your Order</h3>
-            <form className="space-y-4">
+            <h3 className="text-xl text-black font-semibold mb-4">Track Your Order</h3>
+            <form className="space-y-4 ">
               <input
                 type="text"
                 placeholder="Enter Order ID"
-                className="w-full p-3 border rounded-lg"
+                className="w-1/4 p-3 border-2 border-gray-800 rounded-lg placeholder-gray-600 focus:ring-2 focus:ring-gray-200 focus:outline-none" 
               />
+              <br />
               <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
                 Track
               </button>

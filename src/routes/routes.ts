@@ -6,6 +6,9 @@ import Consultation from "../components/Cards/Consultation";
 import EstimateCost from "../components/Cards/EstimateCost";
 import MyProfile from "../pages/Profile/Dashboard";
 import OrderDetal from "../pages/Profile/OrderDetal";
+import QuotationManagement from "../components/Quatation";
+import ColorSection from "../components/ColorSection";
+import RoomDetails from "../components/Features/RoomDetail";
 const Login = lazy(() => import("../pages/Login"));
 
 const routes = [
@@ -49,6 +52,20 @@ const routes = [
    key: "orderdetail",
    component: OrderDetal, 
    path: "/orderdetail"
+ },
+ {
+   key: "quotation",
+   component: QuotationManagement, 
+   path: "/quotation"
+ },{
+   key: "Colors",
+   component: ColorSection,
+   path: "/colors"
+ },
+ {
+  key: "RoomDetail",
+  component: RoomDetails,
+  path: "/roomdetail"
  }
   
 ];
