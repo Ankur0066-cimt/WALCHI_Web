@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { BiUserCircle } from "react-icons/bi";
 import orderImg from "../../assets/Walchi.png"
 import { useNavigate } from "react-router-dom";
+import ChatWidget from "../../components/Features/ChatBot";
 const Dashboard = () => {
   const [selectedTab, setSelectedTab] = useState("myOrder");
   const [name, setName] = useState("Ankur Tiwari");
@@ -11,6 +12,8 @@ const Dashboard = () => {
 
   const navigate = useNavigate();
   return (
+    <>
+    <ChatWidget />
     <div className="flex min-h-screen bg-gradient-to-br from-[#006E39] to-[#E1C680]">
    
       <aside className="w-64 border-r bg-gradient-to-br from-[#006E39] to-[#E1C680] p-6 flex flex-col">
@@ -63,6 +66,16 @@ const Dashboard = () => {
           >
             View Order Details
             </button>
+            <button 
+          onClick={() => navigate("/roomdetail")}
+          className={`w-full py-2 px-3 rounded transition ${
+              selectedTab === "trackOrder"
+                ? "bg-white text-green-700 font-semibold"
+                : "text-white hover:bg-green-800"
+            }`}
+          >
+          Payment Option
+            </button>
         </nav>
       </aside>
 
@@ -109,26 +122,27 @@ const Dashboard = () => {
           <div className="bg-white rounded-lg shadow-lg p-8">
             <div className="flex justify-between items-center mb-6">
               <h3 className="text-xl font-semibold text-gray-800">Personal Information</h3>
-              <button className="text-blue-600 hover:underline">Edit</button>
+              <button className="text-white hover:underline">Edit</button>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Name */}
               <div className="flex flex-col">
-                <label className="text-gray-600 mb-1">Name</label>
+                <label className="text-gray-800 mb-1 ">Name</label>
                 <input
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-green-400 focus:outline-none"
-                />
+  type="text"
+  value={name}
+  onChange={(e) => setName(e.target.value)}
+  placeholder="Enter your name"
+  className="w-full p-3 border border-gray-300 rounded placeholder-red-500 focus:ring-2 focus:ring-green-400 focus:outline-none"
+/>
               </div>
 
               {/* Gender */}
               <div className="flex flex-col">
-                <label className="text-gray-600 mb-1">Gender</label>
+                <label className="text-gray-800 mb-1">Gender</label>
                 <div className="flex items-center space-x-6 mt-1">
-                  <label className="flex items-center space-x-2">
+                  <label className="flex items-center space-x-2 text-gray-800">
                     <input
                       type="radio"
                       value="Male"
@@ -138,7 +152,7 @@ const Dashboard = () => {
                     />
                     <span>Male</span>
                   </label>
-                  <label className="flex items-center space-x-2">
+                  <label className="flex items-center space-x-2 text-gray-800">
                     <input
                       type="radio"
                       value="Female"
@@ -202,6 +216,7 @@ const Dashboard = () => {
         )}
       </main>
     </div>
+    </>
   );
 };
 

@@ -2,7 +2,7 @@ import { FaPaintBrush, FaPaintRoller } from "react-icons/fa";
 import exploreimg from "../../assets/explore.jpg";
 import { LuPaintbrush, LuPaintBucket } from "react-icons/lu";
 import { GiPaintBucket } from "react-icons/gi";
-import { use } from "react";
+// import { use } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Explore = () => {
@@ -27,32 +27,32 @@ const Explore = () => {
           </button>
         </div>
 
-        <div className="pl-220 w-full h-full flex flex-col justify-center items-center mt-2"> {/* Adjusted pl-10 and added mt-20 */}
-          <div className="bg-white w-[500px] min-h-[300px] flex flex-col justify-start items-start rounded-lg shadow-md gap-4">
+        <div className="pl-180 w-full h-full flex flex-col justify-center items-center mt-2"> {/* Adjusted pl-10 and added mt-20 */}
+          <div className="bg-white w-[400px] min-h-[380px] flex flex-col justify-start items-start rounded-lg shadow-md gap-4">
             <h1 className="text-2xl ml-2 text-left text-[#006E39] font-semibold z-10">
               Transform Your Space
             </h1>
 
-            <div className="grid grid-cols-3 gap-4 w-full ">
+            <div className="grid grid-cols-3 gap-4 w-full pt-5">
               <div className="flex flex-col items-center cursor-pointer" onClick={() => navigate("/consultation")}>
                 <FaPaintBrush fontSize={60} className="text-gray-700 text-lg mt-4" />
-                <span className="text-gray-700 text-md">Paint</span>
+                <span className="text-gray-700 text-md mb-8">Paint</span>
               </div>
               <div className="flex flex-col items-center cursor-pointer" onClick={() => navigate("/consultation")}>
                 <FaPaintRoller fontSize={60} className="text-gray-700 text-lg mt-4" />
-                <span className="text-gray-700 text-md">Paint</span>
+                <span className="text-gray-700 text-md">Wallpaper</span>
               </div>
               <div className="flex flex-col items-center cursor-pointer" onClick={() => navigate("/consultation")}>
                 <LuPaintBucket fontSize={60} className="text-gray-700 text-lg mt-4" />
-                <span className="text-gray-700 text-md">Paint</span>
+                <span className="text-gray-700 text-md">Muller</span>
               </div>
               <div className="flex flex-col items-center cursor-pointer" onClick={() => navigate("/consultation")}>
                 <LuPaintbrush fontSize={60} className="text-gray-700 text-lg mt-4" />
-                <span className="text-gray-700 text-md">Paint</span>
+                <span className="text-gray-700 text-md">Roll</span>
               </div>
               <div className="flex flex-col items-center cursor-pointer" onClick={() => navigate("/consultation")}>
                 <GiPaintBucket fontSize={60} className="text-gray-700 text-lg mt-4" />
-                <span className="text-gray-700 text-md">Paint</span>
+                <span className="text-gray-700 text-md">Instapaint</span>
               </div>
               <div className="flex flex-col items-center cursor-pointer" onClick={() => navigate("/consultation")}>
                 <FaPaintBrush fontSize={60} className="text-gray-700 text-lg mt-4" />

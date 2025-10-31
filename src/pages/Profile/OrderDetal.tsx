@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import walchilogo from "../../assets/image.png";
-import Navbar from "../../components/Navbar";
+
 import { FaBoxOpen, FaCheckCircle, FaClock, FaShippingFast } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
@@ -65,7 +65,7 @@ const [isModalOpen, setIsModalOpen] = useState(false);
     updatesLink: "See All Updates >",
     executiveNote:
       "Report  details will be available once the Vendor is out for Execution.",
-    actions: ["Cancel Order", "Chat with us"],
+    actions: ["Back", "Chat with us"],
   });
 
   const handleOpenModal = () => setIsModalOpen(true);
@@ -189,7 +189,9 @@ const [isModalOpen, setIsModalOpen] = useState(false);
                     color: "black",
                    
                     
-                  }}>
+                  }}
+                   onClick={() => navigate('/myprofile')}
+                  >
           {orderData.actions[0]}
         </button>
         <button className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"  style={{
@@ -204,7 +206,7 @@ const [isModalOpen, setIsModalOpen] = useState(false);
       </div>
      
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-md flex items-center justify-center z-50">
+<div className="fixed inset-0 backdrop-blur-md flex items-center justify-center z-[100]">
           <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[80vh] overflow-y-auto p-8 relative">
            
             <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">

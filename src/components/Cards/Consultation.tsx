@@ -66,7 +66,7 @@ const Consultation = () => {
 
     <button
       type="submit"
-      className="w-full bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition duration-300 mt-4"
+      className="w-full bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition duration-300 "
       onClick={() => navigate("/")}
     >
       Book Now

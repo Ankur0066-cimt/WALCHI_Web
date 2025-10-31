@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Button } from './UI/button';
-import { Card, CardContent } from '../components/card';
+import { Card, CardContent } from '../components/UI/card';
 import { ChevronLeft, ChevronRight, Download } from 'lucide-react';
 
 const ColorSection = () => {

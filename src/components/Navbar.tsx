@@ -4,12 +4,12 @@ import {
   FaSearch,
   FaUser,
   FaMapMarkerAlt,
-  FaBriefcase,
+  // FaBriefcase,
 } from "react-icons/fa";
 import { FaRegBuilding } from "react-icons/fa6";
 import walchilogo from "../assets/Walchi.png";
 import { useNavigate } from "react-router-dom";
-import { PiCarProfile } from "react-icons/pi";
+// import { PiCarProfile } from "react-icons/pi";
 import { FiSettings } from "react-icons/fi";
 
 const Navbar: React.FC = () => {
@@ -29,14 +29,14 @@ const Navbar: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <nav className="w-full bg-white shadow-sm">
+    <nav className=" w-full bg-white shadow-sm">
       <div className="max-w-full mx-auto mr-8 ml-2 flex items-center justify-between h-20">
         <div className="flex items-center gap-4">
           <img
             src={walchilogo}
             alt="Wallchi Logo"
             className="w-40 h-20 cursor-pointer"
-            onClick={() => (window.location.href = "/home")}
+            onClick={() => (window.location.href = "/")}
           />
           {/* <span className="text-xl font-bold text-[#d9392b]">Wallchi</span> */}
         </div>

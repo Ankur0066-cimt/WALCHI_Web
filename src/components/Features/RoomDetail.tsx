@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../../components/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../../components/UI/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../../components/UI/table';
-import { Badge } from '../../components/UI/badge';
+// import { Badge } from '../../components/UI/badge';
 import { Button } from '../../components/UI/button';
-import { Eye, Calculator } from 'lucide-react';
+import {  Calculator } from 'lucide-react';
 // import { Room, Wall } from '../../types';
 import { mockApiCall } from '../../lib/api';
 import { PRODUCTS } from '../../lib/constant';
 import Navbar from '../Navbar';
 import walchilogo from '../../assets/Walchi.png';
+import ChatWidget from './ChatBot';
 
 interface Product {
   id: string;
@@ -156,7 +157,9 @@ export default function RoomDetails() {
 
   if (isLoading) {
     return (
+      
       <div className="container mx-auto py-8 px-4">
+       
         <div className="flex items-center justify-center h-64">
           <div className="text-center">
             <Calculator className="w-8 h-8 animate-spin mx-auto mb-4" />
@@ -169,9 +172,12 @@ export default function RoomDetails() {
 
   return (
     <>
-    <Navbar />
+    <div className="w-full z-50">
+        <Navbar />
+      </div>
 
-    <div className="container mx-auto py-8 px-4 text-cream-800">
+ <ChatWidget />
+    <div className="container mx-auto py-8 px-4 text-cream-800 ">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-gray-900">Room & Wall Details</h1>
@@ -236,10 +242,7 @@ export default function RoomDetails() {
                   >
                     <div className="flex justify-between items-start mb-2">
                       <h3 className="font-medium text-black">{room.name}</h3>
-                      <Button variant="ghost" size="sm" style={{display:'flex',gap:'5px0' ,backgroundColor:'#ec2323ff'}}>
-                        <Eye className="w-4 h-4" />
-                        <span className=" text-white ">Live</span>
-                      </Button>
+                    
                     </div>
                     
                     <div className="space-y-1 text-sm text-gray-800 mb-3">
@@ -298,7 +301,21 @@ export default function RoomDetails() {
             {selectedRoom ? (
               <Card>
                 <CardHeader>
-                  <CardTitle>{selectedRoom.name} - Wall Details</CardTitle>
+                  <div className='flex justify-between'>
+                  <div className='flex justify-start'>
+                  <CardTitle>{selectedRoom.name} - Wall Details</CardTitle></div>
+                 <div className="flex justify-end">
+ <Button
+    variant="destructive"
+    size="sm"
+    className="flex items-center justify-center space-x-1 w-24"
+    style={{ backgroundColor: "red" }}
+  >
+    <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+    <span>Live</span>
+  </Button>
+</div>
+</div>
                   <CardDescription>
                     {selectedRoom.selectedProduct?.name} - ₹{selectedRoom.selectedProduct?.pricePerSqFt}/sq.ft
                   </CardDescription>
